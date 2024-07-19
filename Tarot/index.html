@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Cards and Astrological Associations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tarot Cards and Astrological Associations</h1>
+        <nav>
+            <button class="menu-toggle">Tarot Suits</button>
+            <ul class="menu">
+                <span class="close-menu">&times;</span>
+                <li>
+                    <a href="#" class="submenu-toggle">Major Arcana</a>
+                    <ul class="submenu">
+                        <li><a href="#fool">The Fool (Uranus, Air, Aleph (&#1488;))</a></li>
+                        <li><a href="#magician">The Magician (Mercury, Bet (&#1489;))</a></li>
+                        <li><a href="#high-priestess">The High Priestess (Moon, Gimel (&#1490;))</a></li>
+                        <li><a href="#empress">The Empress (Venus, Dalet (&#1491;))</a></li>
+                        <li><a href="#emperor">The Emperor (Aries, He (&#1492;))</a></li>
+                        <li><a href="#hierophant">The Hierophant (Taurus, Vav (&#1493;))</a></li>
+                        <li><a href="#lovers">The Lovers (Gemini, Zayin (&#1494;))</a></li>
+                        <li><a href="#chariot">The Chariot (Cancer, Het (&#1495;))</a></li>
+                        <li><a href="#strength">Strength (Leo, Tet (&#1496;))</a></li>
+                        <li><a href="#hermit">The Hermit (Virgo, Yod (&#1497;))</a></li>
+                        <li><a href="#wheel-of-fortune">Wheel of Fortune (Jupiter, Kaf (&#1499;))</a></li>
+                        <li><a href="#justice">Justice (Libra, Lamed (&#1500;))</a></li>
+                        <li><a href="#hanged-man">The Hanged Man (Neptune, Water, Mem (&#1502;))</a></li>
+                        <li><a href="#death">Death (Scorpio, Nun (&#1504;))</a></li>
+                        <li><a href="#temperance">Temperance (Sagittarius, Samekh (&#1505;))</a></li>
+                        <li><a href="#devil">The Devil (Capricorn, Ayin (&#1506;))</a></li>
+                        <li><a href="#tower">The Tower (Mars, Pe (&#1508;))</a></li>
+                        <li><a href="#star">The Star (Aquarius, Tsadi (&#1510;))</a></li>
+                        <li><a href="#moon">The Moon (Pisces, Qof (&#1511;))</a></li>
+                        <li><a href="#sun">The Sun (Sun, Resh (&#1512;))</a></li>
+                        <li><a href="#judgement">Judgement (Pluto, Fire, Shin (&#1513;))</a></li>
+                        <li><a href="#world">The World (Saturn, Tav (&#1514;))</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="submenu-toggle">Wands (Fire)</a>
+                    <ul class="submenu">
+                        <li><a href="#ace-of-wands">Ace of Wands</a></li>
+                        <li><a href="#two-of-wands">Two of Wands (Mars in Aries)</a></li>
+                        <li><a href="#three-of-wands">Three of Wands (Sun in Aries)</a></li>
+                        <li><a href="#four-of-wands">Four of Wands (Venus in Aries)</a></li>
+                        <li><a href="#five-of-wands">Five of Wands (Saturn in Leo)</a></li>
+                        <li><a href="#six-of-wands">Six of Wands (Jupiter in Leo)</a></li>
+                        <li><a href="#seven-of-wands">Seven of Wands (Mars in Leo)</a></li>
+                        <li><a href="#eight-of-wands">Eight of Wands (Mercury in Sagittarius)</a></li>
+                        <li><a href="#nine-of-wands">Nine of Wands (Moon in Sagittarius)</a></li>
+                        <li><a href="#ten-of-wands">Ten of Wands (Saturn in Sagittarius)</a></li>
+                        <li><a href="#page-of-wands">Page of Wands (Earth of Fire)</a></li>
+                        <li><a href="#knight-of-wands">Knight of Wands (Air of Fire)</a></li>
+                        <li><a href="#queen-of-wands">Queen of Wands (Water of Fire)</a></li>
+                        <li><a href="#king-of-wands">King of Wands (Fire of Fire)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="submenu-toggle">Cups (Water)</a>
+                    <ul class="submenu">
+                        <li><a href="#ace-of-cups">Ace of Cups</a></li>
+                        <li><a href="#two-of-cups">Two of Cups (Venus in Cancer)</a></li>
+                        <li><a href="#three-of-cups">Three of Cups (Mercury in Cancer)</a></li>
+                        <li><a href="#four-of-cups">Four of Cups (Moon in Cancer)</a></li>
+                        <li><a href="#five-of-cups">Five of Cups (Mars in Scorpio)</a></li>
+                        <li><a href="#six-of-cups">Six of Cups (Sun in Scorpio)</a></li>
+                        <li><a href="#seven-of-cups">Seven of Cups (Venus in Scorpio)</a></li>
+                        <li><a href="#eight-of-cups">Eight of Cups (Saturn in Pisces)</a></li>
+                        <li><a href="#nine-of-cups">Nine of Cups (Jupiter in Pisces)</a></li>
+                        <li><a href="#ten-of-cups">Ten of Cups (Mars in Pisces)</a></li>
+                        <li><a href="#page-of-cups">Page of Cups (Earth of Water)</a></li>
+                        <li><a href="#knight-of-cups">Knight of Cups (Air of Water)</a></li>
+                        <li><a href="#queen-of-cups">Queen of Cups (Water of Water)</a></li>
+                        <li><a href="#king-of-cups">King of Cups (Fire of Water)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="submenu-toggle">Swords (Air)</a>
+                    <ul class="submenu">
+                        <li><a href="#ace-of-swords">Ace of Swords</a></li>
+                        <li><a href="#two-of-swords">Two of Swords (Moon in Libra)</a></li>
+                        <li><a href="#three-of-swords">Three of Swords (Saturn in Libra)</a></li>
+                        <li><a href="#four-of-swords">Four of Swords (Jupiter in Libra)</a></li>
+                        <li><a href="#five-of-swords">Five of Swords (Venus in Aquarius)</a></li>
+                        <li><a href="#six-of-swords">Six of Swords (Mercury in Aquarius)</a></li>
+                        <li><a href="#seven-of-swords">Seven of Swords (Moon in Aquarius)</a></li>
+                        <li><a href="#eight-of-swords">Eight of Swords (Jupiter in Gemini)</a></li>
+                        <li><a href="#nine-of-swords">Nine of Swords (Mars in Gemini)</a></li>
+                        <li><a href="#ten-of-swords">Ten of Swords (Sun in Gemini)</a></li>
+                        <li><a href="#page-of-swords">Page of Swords (Earth of Air)</a></li>
+                        <li><a href="#knight-of-swords">Knight of Swords (Air of Air)</a></li>
+                        <li><a href="#queen-of-swords">Queen of Swords (Water of Air)</a></li>
+                        <li><a href="#king-of-swords">King of Swords (Fire of Air)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="submenu-toggle">Pentacles (Earth)</a>
+                    <ul class="submenu">
+                        <li><a href="#ace-of-pentacles">Ace of Pentacles</a></li>
+                        <li><a href="#two-of-pentacles">Two of Pentacles (Jupiter in Capricorn)</a></li>
+                        <li><a href="#three-of-pentacles">Three of Pentacles (Mars in Capricorn)</a></li>
+                        <li><a href="#four-of-pentacles">Four of Pentacles (Sun in Capricorn)</a></li>
+                        <li><a href="#five-of-pentacles">Five of Pentacles (Mercury in Taurus)</a></li>
+                        <li><a href="#six-of-pentacles">Six of Pentacles (Moon in Taurus)</a></li>
+                        <li><a href="#seven-of-pentacles">Seven of Pentacles (Saturn in Taurus)</a></li>
+                        <li><a href="#eight-of-pentacles">Eight of Pentacles (Sun in Virgo)</a></li>
+                        <li><a href="#nine-of-pentacles">Nine of Pentacles (Venus in Virgo)</a></li>
+                        <li><a href="#ten-of-pentacles">Ten of Pentacles (Mercury in Virgo)</a></li>
+                        <li><a href="#page-of-pentacles">Page of Pentacles (Earth of Earth)</a></li>
+                        <li><a href="#knight-of-pentacles">Knight of Pentacles (Air of Earth)</a></li>
+                        <li><a href="#queen-of-pentacles">Queen of Pentacles (Water of Earth)</a></li>
+                        <li><a href="#king-of-pentacles">King of Pentacles (Fire of Earth)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <a class="back-to-hub" href="../index.html">Back to Hub</a>
+    </header>
+
+    <!-- Cards Container -->
+    <div id="cards-container">
+        <!-- Major Arcana -->
+        <h2 id="major-arcana">Major Arcana</h2>
+        <div class="card-section">
+            <div class="card" id="fool">
+                <h3>The Fool</h3>
+                <img src="images/00.png" alt="The Fool">
+                <p>Uranus</p>
+                <hr>
+                <p>Air</p>
+                <hr>
+                <p>Aleph (&#1488;)</p>
+                <hr>
+                <p>Path 11: Aleph (א) - Between Kether (Crown) and Chokmah (Wisdom)</p>
+                <hr>
+                <p>Lamentations 1:1 - How lonely sits the city that was full of people! How like a widow has she become, she who was great among the nations! She who was a princess among the provinces has become a slave.</p>
+                <hr>
+                <p>Lamentations 2:1 - How the Lord in his anger has set the daughter of Zion under a cloud! He has cast down from heaven to earth the splendor of Israel; he has not remembered his footstool in the day of his anger.</p>
+                <hr>
+                <p>Lamentations 4:1 - How the gold has grown dim, how the pure gold is changed! The holy stones lie scattered at the head of every street.</p>
+                <hr>
+                <p>Lamentations 5:1 - Remember, O Lord, what has befallen us; look, and see our disgrace!</p>
+            </div>
+            <div class="card" id="magician">
+                <h3>The Magician</h3>
+                <img src="images/01.png" alt="The Magician">
+                <p>Mercury</p>
+                <hr>
+                <p>Bet (&#1489;)</p>
+                <hr>
+                <p>Path 12: Beth (ב) - Between Kether (Crown) and Binah (Understanding)</p>
+                <hr>
+                <p>Lamentations 1:2 - She weeps bitterly in the night, with tears on her cheeks; among all her lovers she has none to comfort her; all her friends have dealt treacherously with her; they have become her enemies.</p>
+                <hr>
+                <p>Lamentations 2:2 - The Lord has swallowed up without mercy all the habitations of Jacob; in his wrath he has broken down the strongholds of the daughter of Judah; he has brought down to the ground in dishonor the kingdom and its rulers.</p>
+                <hr>
+                <p>Lamentations 4:2 - The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter's hands!</p>
+                <hr>
+                <p>Lamentations 5:2 - Our inheritance has been turned over to strangers, our homes to foreigners.</p>
+            </div>
+            <div class="card" id="high-priestess">
+                <h3>The High Priestess</h3>
+                <img src="images/02.png" alt="The High Priestess">
+                <p>Moon</p>
+                <hr>
+                <p>Gimel (&#1490;)</p>
+                <hr>
+                <p>Path 13: Gimel (ג) - Between Kether (Crown) and Tiphareth (Beauty)</p>
+                <hr>
+                <p>Lamentations 1:3 - Judah has gone into exile because of affliction and hard servitude; she dwells now among the nations, but finds no resting place; her pursuers have all overtaken her in the midst of her distress.</p>
+                <hr>
+                <p>Lamentations 2:3 - He has cut down in fierce anger all the might of Israel; he has withdrawn from them his right hand in the face of the enemy; he has burned like a flaming fire in Jacob, consuming all around.</p>
+                <hr>
+                <p>Lamentations 4:3 - Even jackals offer the breast; they nurse their young; but the daughter of my people has become cruel, like the ostriches in the wilderness.</p>
+                <hr>
+                <p>Lamentations 5:3 - We have become orphans, fatherless; our mothers are like widows.</p>
+            </div>
+            <div class="card" id="empress">
+                <h3>The Empress</h3>
+                <img src="images/03.png" alt="The Empress">
+                <p>Venus</p>
+                <hr>
+                <p>Dalet (&#1491;)</p>
+                <hr>
+                <p>Path 14: Daleth (ד) - Between Chokmah (Wisdom) and Binah (Understanding)</p>
+                <hr>
+                <p>Lamentations 1:4 - The roads to Zion mourn, for none come to the festival; all her gates are desolate; her priests groan; her virgins have been afflicted, and she herself suffers bitterly.</p>
+                <hr>
+                <p>Lamentations 2:4 - He has bent his bow like an enemy, with his right hand set like a foe; and he has killed all who were delightful in our eyes in the tent of the daughter of Zion; he has poured out his fury like fire.</p>
+                <hr>
+                <p>Lamentations 4:4 - The tongue of the nursing infant sticks to the roof of its mouth for thirst; the children beg for food, but no one gives to them.</p>
+                <hr>
+                <p>Lamentations 5:4 - We must pay for the water we drink; the wood we get must be bought.</p>
+            </div>
+            <div class="card" id="emperor">
+                <h3>The Emperor</h3>
+                <img src="images/04.png" alt="The Emperor">
+                <p>Aries</p>
+                <hr>
+                <p>He (&#1492;)</p>
+                <hr>
+                <p>Path 15: Heh (ה) - Between Chokmah (Wisdom) and Tiphareth (Beauty)</p>
+                <hr>
+                <p>Lamentations 1:5 - Her foes have become the head; her enemies prosper, because the Lord has afflicted her for the multitude of her transgressions; her children have gone away, captives before the foe.</p>
+                <hr>
+                <p>Lamentations 2:5 - The Lord has become like an enemy; he has swallowed up Israel; he has swallowed up all its palaces; he has laid in ruins its strongholds, and he has multiplied in the daughter of Judah mourning and lamentation.</p>
+                <hr>
+                <p>Lamentations 4:5 - Those who once feasted on delicacies perish in the streets; those who were brought up in purple embrace ash heaps.</p>
+                <hr>
+                <p>Lamentations 5:5 - Our pursuers are at our necks; we are weary; we are given no rest.</p>
+            </div>
+            <div class="card" id="hierophant">
+                <h3>The Hierophant</h3>
+                <img src="images/05.png" alt="The Hierophant">
+                <p>Taurus</p>
+                <hr>
+                <p>Vav (&#1493;)</p>
+                <hr>
+                <p>Path 16: Vav (ו) - Between Chokmah (Wisdom) and Chesed (Mercy)</p>
+                <hr>
+                <p>Lamentations 1:6 - From the daughter of Zion all her majesty has departed. Her princes have become like deer that find no pasture; they fled without strength before the pursuer.</p>
+                <hr>
+                <p>Lamentations 2:6 - He has laid waste his booth like a garden, laid in ruins his meeting place; the Lord has made Zion forget festival and Sabbath, and in his fierce indignation has spurned king and priest.</p>
+                <hr>
+                <p>Lamentations 4:6 - For the chastisement of the daughter of my people has been greater than the punishment of Sodom, which was overthrown in a moment, and no hands were wrung for her.</p>
+                <hr>
+                <p>Lamentations 5:6 - We have given the hand to Egypt, and to Assyria, to get bread enough.</p>
+            </div>
+            <div class="card" id="lovers">
+                <h3>The Lovers</h3>
+                <img src="images/06.png" alt="The Lovers">
+                <p>Gemini</p>
+                <hr>
+                <p>Zayin (&#1494;)</p>
+                <hr>
+                <p>Path 17: Zayin (ז) - Between Binah (Understanding) and Tiphareth (Beauty)</p>
+                <hr>
+                <p>Lamentations 1:7 - Jerusalem remembers in the days of her affliction and wandering all the precious things that were hers from days of old. When her people fell into the hand of the foe, and there was none to help her, her foes gloated over her; they mocked at her downfall.</p>
+                <hr>
+                <p>Lamentations 2:7 - The Lord has scorned his altar, disowned his sanctuary; he has delivered into the hand of the enemy the walls of her palaces; they raised a clamor in the house of the Lord as on the day of festival.</p>
+                <hr>
+                <p>Lamentations 4:7 - Her princes were purer than snow, whiter than milk; their bodies were more ruddy than coral, the beauty of their form was like sapphire.</p>
+                <hr>
+                <p>Lamentations 5:7 - Our fathers sinned, and are no more; and we bear their iniquities.</p>
+            </div>
+            <div class="card" id="chariot">
+                <h3>The Chariot</h3>
+                <img src="images/07.png" alt="The Chariot">
+                <p>Cancer</p>
+                <hr>
+                <p>Chet (&#1495;)</p>
+                <hr>
+                <p>Path 18: Cheth (ח) - Between Binah (Understanding) and Geburah (Severity)</p>
+                <hr>
+                <p>Lamentations 1:8 - Jerusalem sinned grievously; therefore she became filthy; all who honored her despise her, for they have seen her nakedness; she herself groans and turns her face away.</p>
+                <hr>
+                <p>Lamentations 2:8 - The Lord determined to lay in ruins the wall of the daughter of Zion; he stretched out the measuring line; he did not restrain his hand from destroying; he caused rampart and wall to lament; they languished together.</p>
+                <hr>
+                <p>Lamentations 4:8 - Now their face is blacker than soot; they are not recognized in the streets; their skin has shriveled on their bones; it has become as dry as wood.</p>
+                <hr>
+                <p>Lamentations 5:8 - Slaves rule over us; there is none to deliver us from their hand.</p>
+            </div>
+            <div class="card" id="strength">
+                <h3>Strength</h3>
+                <img src="images/08.png" alt="Strength">
+                <p>Leo</p>
+                <hr>
+                <p>Tet (&#1496;)</p>
+                <hr>
+                <p>Path 19: Teth (ט) - Between Chesed (Mercy) and Geburah (Severity)</p>
+                <hr>
+                <p>Lamentations 1:9 - Her uncleanness was in her skirts; she took no thought of her future; therefore her fall is terrible; she has no comforter. "O Lord, behold my affliction, for the enemy has triumphed!"</p>
+                <hr>
+                <p>Lamentations 2:9 - Her gates have sunk into the ground; he has ruined and broken her bars; her king and princes are among the nations; the law is no more, and her prophets find no vision from the Lord.</p>
+                <hr>
+                <p>Lamentations 4:9 - Happier were the victims of the sword than the victims of hunger, who wasted away, pierced by lack of the fruits of the field.</p>
+                <hr>
+                <p>Lamentations 5:9 - We get our bread at the peril of our lives, because of the sword in the wilderness.</p>
+            </div>
+            <div class="card" id="hermit">
+                <h3>The Hermit</h3>
+                <img src="images/09.png" alt="The Hermit">
+                <p>Virgo</p>
+                <hr>
+                <p>Yod (&#1497;)</p>
+                <hr>
+                <p>Path 20: Yod (י) - Between Chesed (Mercy) and Tiphareth (Beauty)</p>
+                <hr>
+                <p>Lamentations 1:10 - The enemy has stretched out his hands over all her precious things; for she has seen the nations enter her sanctuary, those whom you forbade to enter your congregation.</p>
+                <hr>
+                <p>Lamentations 2:10 - The elders of the daughter of Zion sit on the ground in silence; they have thrown dust on their heads and put on sackcloth; the young women of Jerusalem have bowed their heads to the ground.</p>
+                <hr>
+                <p>Lamentations 4:10 - The hands of compassionate women have boiled their own children; they became their food during the destruction of the daughter of my people.</p>
+                <hr>
+                <p>Lamentations 5:10 - Our skin is hot as an oven with the burning heat of famine.</p>
+            </div>
+            <div class="card" id="wheel-of-fortune">
+                <h3>Wheel of Fortune</h3>
+                <img src="images/10.png" alt="Wheel of Fortune">
+                <p>Jupiter</p>
+                <hr>
+                <p>Kaf (&#1499;)</p>
+                <hr>
+                <p>Path 21: Kaph (כ) - Between Chesed (Mercy) and Netzach (Victory)</p>
+                <hr>
+                <p>Lamentations 1:11 - All her people groan as they search for bread; they trade their treasures for food to revive their strength. "Look, O Lord, and see, for I am despised."</p>
+                <hr>
+                <p>Lamentations 2:11 - My eyes are spent with weeping; my stomach churns; my bile is poured out to the ground because of the destruction of the daughter of my people, because infants and babies faint in the streets of the city.</p>
+                <hr>
+                <p>Lamentations 4:11 - The Lord gave full vent to his wrath; he poured out his hot anger, and he kindled a fire in Zion that consumed its foundations.</p>
+                <hr>
+                <p>Lamentations 5:11 - Women are raped in Zion, young women in the towns of Judah.</p>
+            </div>
+            <div class="card" id="justice">
+                <h3>Justice</h3>
+                <img src="images/11.png" alt="Justice">
+                <p>Libra</p>
+                <hr>
+                <p>Lamed (&#1500;)</p>
+                <hr>
+                <p>Path 22: Lamed (ל) - Between Geburah (Severity) and Tiphareth (Beauty)</p>
+                <hr>
+                <p>Lamentations 1:12 - "Is it nothing to you, all you who pass by? Look and see if there is any sorrow like my sorrow, which was brought upon me, which the Lord inflicted on the day of his fierce anger."</p>
+                <hr>
+                <p>Lamentations 2:12 - They cry to their mothers, "Where is bread and wine?" as they faint like a wounded man in the streets of the city, as their life is poured out on their mothers' bosom.</p>
+                <hr>
+                <p>Lamentations 4:12 - The kings of the earth did not believe, nor any of the inhabitants of the world, that foe or enemy could enter the gates of Jerusalem.</p>
+                <hr>
+                <p>Lamentations 5:12 - Princes are hung up by their hands; no respect is shown to the elders.</p>
+            </div>
+            <div class="card" id="hanged-man">
+                <h3>The Hanged Man</h3>
+                <img src="images/12.png" alt="The Hanged Man">
+                <p>Neptune</p>
+                <hr>
+                <p>Water</p>
+                <hr>
+                <p>Mem (&#1502;)</p>
+                <hr>
+                <p>Path 23: Mem (מ) - Between Geburah (Severity) and Hod (Splendor)</p>
+                <hr>
+                <p>Lamentations 1:13 - "From on high he sent fire; into my bones he made it descend; he spread a net for my feet; he turned me back; he has left me stunned, faint all the day long."</p>
+                <hr>
+                <p>Lamentations 2:13 - What can I say for you, to what compare you, O daughter of Jerusalem? What can I liken to you, that I may comfort you, O virgin daughter of Zion? For your ruin is vast as the sea; who can heal you?</p>
+                <hr>
+                <p>Lamentations 4:13 - This was for the sins of her prophets and the iniquities of her priests, who shed in the midst of her the blood of the righteous.</p>
+                <hr>
+                <p>Lamentations 5:13 - Young men are compelled to grind at the mill, and boys stagger under loads of wood.</p>
+            </div>
+            <div class="card" id="death">
+                <h3>Death</h3>
+                <img src="images/13.png" alt="Death">
+                <p>Scorpio</p>
+                <hr>
+                <p>Nun (&#1504;)</p>
+                <hr>
+                <p>Path 24: Nun (נ) - Between Tiphareth (Beauty) and Netzach (Victory)</p>
+                <hr>
+                <p>Lamentations 1:14 - "My transgressions were bound into a yoke; by his hand they were fastened together; they were set upon my neck; he caused my strength to fail; the Lord gave me into the hands of those whom I cannot withstand."</p>
+                <hr>
+                <p>Lamentations 2:14 - Your prophets have seen for you false and deceptive visions; they have not exposed your iniquity to restore your fortunes, but have seen for you oracles that are false and misleading.</p>
+                <hr>
+                <p>Lamentations 4:14 - They wandered, blind, through the streets; they were so defiled with blood that no one was able to touch their garments.</p>
+                <hr>
+                <p>Lamentations 5:14 - The old men have left the city gate, the young men their music.</p>
+            </div>
+            <div class="card" id="temperance">
+                <h3>Temperance</h3>
+                <img src="images/14.png" alt="Temperance">
+                <p>Sagittarius</p>
+                <hr>
+                <p>Samech (&#1505;)</p>
+                <hr>
+                <p>Path 25: Samekh (ס) - Between Tiphareth (Beauty) and Yesod (Foundation)</p>
+                <hr>
+                <p>Lamentations 1:15 - "The Lord rejected all my mighty men in my midst; he summoned an assembly against me to crush my young men; the Lord has trodden as in a winepress the virgin daughter of Judah."</p>
+                <hr>
+                <p>Lamentations 2:15 - All who pass along the way clap their hands at you; they hiss and wag their heads at the daughter of Jerusalem; "Is this the city that was called the perfection of beauty, the joy of all the earth?"</p>
+                <hr>
+                <p>Lamentations 4:15 - "Away! Unclean!" people cried at them. "Away! Away! Do not touch!" So they became fugitives and wanderers; people said among the nations, "They shall stay with us no longer."</p>
+                <hr>
+                <p>Lamentations 5:15 - The joy of our hearts has ceased; our dancing has been turned to mourning.</p>
+            </div>
+            <div class="card" id="devil">
+                <h3>The Devil</h3>
+                <img src="images/15.png" alt="The Devil">
+                <p>Capricorn</p>
+                <hr>
+                <p>Ayin (&#1506;)</p>
+                <hr>
+                <p>Path 26: Ayin (ע) - Between Tiphareth (Beauty) and Hod (Splendor)</p>
+                <hr>
+                <p>Lamentations 1:16 - "For these things I weep; my eyes flow with tears; for a comforter is far from me, one to revive my spirit; my children are desolate, for the enemy has prevailed."</p>
+                <hr>
+                <p>Lamentations 2:16 - All your enemies rail against you; they hiss, they gnash their teeth, they cry: "We have swallowed her! Ah, this is the day we longed for; now we have it; we see it!"</p>
+                <hr>
+                <p>Lamentations 4:16 - The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders.</p>
+                <hr>
+                <p>Lamentations 5:16 - The crown has fallen from our head; woe to us, for we have sinned!</p>
+            </div>
+            <div class="card" id="tower">
+                <h3>The Tower</h3>
+                <img src="images/16.png" alt="The Tower">
+                <p>Mars</p>
+                <hr>
+                <p>Pe (&#1508;)</p>
+                <hr>
+                <p>Path 27: Peh (פ) - Between Netzach (Victory) and Hod (Splendor)</p>
+                <hr>
+                <p>Lamentations 1:17 - Zion stretches out her hands, but there is none to comfort her; the Lord has commanded against Jacob that his neighbors should be his foes; Jerusalem has become a filthy thing among them.</p>
+                <hr>
+                <p>Lamentations 2:17 - The Lord has done what he purposed; he has carried out his word, which he commanded long ago; he has thrown down without pity; he has made the enemy rejoice over you and exalted the might of your foes.</p>
+                <hr>
+                <p>Lamentations 4:17 - Our eyes failed, ever watching vainly for help; in our watching we watched for a nation which could not save.</p>
+                <hr>
+                <p>Lamentations 5:17 - For this our heart has become sick, for these things our eyes have grown dim.</p>
+            </div>
+            <div class="card" id="star">
+                <h3>The Star</h3>
+                <img src="images/17.png" alt="The Star">
+                <p>Aquarius</p>
+                <hr>
+                <p>Tsadi (&#1510;)</p>
+                <hr>
+                <p>Path 28: Tzaddi (צ) - Between Netzach (Victory) and Yesod (Foundation)</p>
+                <hr>
+                <p>Lamentations 1:18 - "The Lord is in the right, for I have rebelled against his word; but hear, all you peoples, and see my suffering; my young women and my young men have gone into captivity."</p>
+                <hr>
+                <p>Lamentations 2:18 - Their heart cried to the Lord. O wall of the daughter of Zion, let tears stream down like a torrent day and night! Give yourself no rest, your eyes no respite!</p>
+                <hr>
+                <p>Lamentations 4:18 - They dogged our steps so that we could not walk in our streets; our end drew near; our days were numbered, for our end had come.</p>
+                <hr>
+                <p>Lamentations 5:18 - For Mount Zion which lies desolate; jackals prowl over it.</p>
+            </div>
+            <div class="card" id="moon">
+                <h3>The Moon</h3>
+                <img src="images/18.png" alt="The Moon">
+                <p>Pisces</p>
+                <hr>
+                <p>Qof (&#1511;)</p>
+                <hr>
+                <p>Path 29: Qoph (ק) - Between Netzach (Victory) and Malkuth (Kingdom)</p>
+                <hr>
+                <p>Lamentations 1:19 - "I called to my lovers, but they deceived me; my priests and elders perished in the city, while they sought food to revive their strength."</p>
+                <hr>
+                <p>Lamentations 2:19 - Arise, cry out in the night, at the beginning of the night watches! Pour out your heart like water before the presence of the Lord! Lift your hands to him for the lives of your children, who faint for hunger at the head of every street.</p>
+                <hr>
+                <p>Lamentations 4:19 - Our pursuers were swifter than the eagles in the heavens; they chased us on the mountains; they lay in wait for us in the wilderness.</p>
+                <hr>
+                <p>Lamentations 5:19 - But you, O Lord, reign forever; your throne endures to all generations.</p>
+            </div>
+            <div class="card" id="sun">
+                <h3>The Sun</h3>
+                <img src="images/19.png" alt="The Sun">
+                <p>Sun</p>
+                <hr>
+                <p>Resh (&#1512;)</p>
+                <hr>
+                <p>Path 30: Resh (ר) - Between Hod (Splendor) and Yesod (Foundation)</p>
+                <hr>
+                <p>Lamentations 1:20 - "Look, O Lord, for I am in distress; my stomach churns; my heart is wrung within me, because I have been very rebellious. In the street the sword bereaves; in the house it is like death."</p>
+                <hr>
+                <p>Lamentations 2:20 - Look, O Lord, and see! With whom have you dealt thus? Should women eat the fruit of their womb, the children of their tender care? Should priest and prophet be killed in the sanctuary of the Lord?</p>
+                <hr>
+                <p>Lamentations 4:20 - The breath of our nostrils, the Lord's anointed, was captured in their pits, of whom we said, "Under his shadow we shall live among the nations."</p>
+                <hr>
+                <p>Lamentations 5:20 - Why do you forget us forever, why do you forsake us for so many days?</p>
+            </div>
+            <div class="card" id="judgement">
+                <h3>Judgement</h3>
+                <img src="images/20.png" alt="Judgement">
+                <p>Pluto</p>
+                <hr>
+                <p>Fire</p>
+                <hr>
+                <p>Shin (&#1513;)</p>
+                <hr>
+                <p>Path 31: Shin (ש) - Between Hod (Splendor) and Malkuth (Kingdom)</p>
+                <hr>
+                <p>Lamentations 1:21 - "They heard my groaning, yet there is no one to comfort me. All my enemies have heard of my trouble; they are glad that you have done it. You have brought the day you announced; now let them be as I am."</p>
+                <hr>
+                <p>Lamentations 2:21 - In the dust of the streets lie the young and the old; my young women and my young men have fallen by the sword; you have killed them in the day of your anger, slaughtering without pity.</p>
+                <hr>
+                <p>Lamentations 4:21 - Rejoice and be glad, O daughter of Edom, you who dwell in the land of Uz; but to you also the cup shall pass; you shall become drunk and strip yourself bare.</p>
+                <hr>
+                <p>Lamentations 5:21 - Restore us to yourself, O Lord, that we may be restored! Renew our days as of old—</p>
+            </div>
+            <div class="card" id="world">
+                <h3>The World</h3>
+                <img src="images/21.png" alt="The World">
+                <p>Saturn</p>
+                <hr>
+                <p>Tav (&#1514;)</p>
+                <hr>
+                <p>Path 32: Tau (ת) - Between Yesod (Foundation) and Malkuth (Kingdom)</p>
+                <hr>
+                <p>Lamentations 1:22 - "Let all their evildoing come before you, and deal with them as you have dealt with me because of all my transgressions; for my groans are many, and my heart is faint."</p>
+                <hr>
+                <p>Lamentations 2:22 - You summoned as if to a festival day my terrors on every side, and on the day of the anger of the Lord no one escaped or survived; those whom I held and raised my enemy destroyed.</p>
+                <hr>
+                <p>Lamentations 4:22 - The punishment of your iniquity, O daughter of Zion, is accomplished; he will keep you in exile no longer; but your iniquity, O daughter of Edom, he will punish; he will uncover your sins.</p>
+                <hr>
+                <p>Lamentations 5:22 - Unless you have utterly rejected us, and you remain exceedingly angry with us.</p>
+            </div>
+        </div>
+    </div>        
+
+        <!-- Wands -->
+        <h2 id="wands">Wands (Fire)</h2>
+        <div class="card-section">
+            <div class="card" id="ace-of-wands">
+                <h3>Ace of Wands</h3>
+                <img src="images/22.png" alt="Ace of Wands">
+                <p>Fire</p>
+            </div>
+            <div class="card" id="two-of-wands">
+                <h3>Two of Wands</h3>
+                <img src="images/23.png" alt="Two of Wands">
+                <p>Mars in Aries</p>
+            </div>
+            <div class="card" id="three-of-wands">
+                <h3>Three of Wands</h3>
+                <img src="images/24.png" alt="Three of Wands">
+                <p>Sun in Aries</p>
+            </div>
+            <div class="card" id="four-of-wands">
+                <h3>Four of Wands</h3>
+                <img src="images/25.png" alt="Four of Wands">
+                <p>Venus in Aries</p>
+            </div>
+            <div class="card" id="five-of-wands">
+                <h3>Five of Wands</h3>
+                <img src="images/26.png" alt="Five of Wands">
+                <p>Saturn in Leo</p>
+            </div>
+            <div class="card" id="six-of-wands">
+                <h3>Six of Wands</h3>
+                <img src="images/27.png" alt="Six of Wands">
+                <p>Jupiter in Leo</p>
+            </div>
+            <div class="card" id="seven-of-wands">
+                <h3>Seven of Wands</h3>
+                <img src="images/28.png" alt="Seven of Wands">
+                <p>Mars in Leo</p>
+            </div>
+            <div class="card" id="eight-of-wands">
+                <h3>Eight of Wands</h3>
+                <img src="images/29.png" alt="Eight of Wands">
+                <p>Mercury in Sagittarius</p>
+            </div>
+            <div class="card" id="nine-of-wands">
+                <h3>Nine of Wands</h3>
+                <img src="images/30.png" alt="Nine of Wands">
+                <p>Moon in Sagittarius</p>
+            </div>
+            <div class="card" id="ten-of-wands">
+                <h3>Ten of Wands</h3>
+                <img src="images/31.png" alt="Ten of Wands">
+                <p>Saturn in Sagittarius</p>
+            </div>
+            <div class="card" id="page-of-wands">
+                <h3>Page of Wands</h3>
+                <img src="images/32.png" alt="Page of Wands">
+                <p>Earth of Fire</p>
+            </div>
+            <div class="card" id="knight-of-wands">
+                <h3>Knight of Wands</h3>
+                <img src="images/33.png" alt="Knight of Wands">
+                <p>Air of Fire</p>
+            </div>
+            <div class="card" id="queen-of-wands">
+                <h3>Queen of Wands</h3>
+                <img src="images/34.png" alt="Queen of Wands">
+                <p>Water of Fire</p>
+            </div>
+            <div class="card" id="king-of-wands">
+                <h3>King of Wands</h3>
+                <img src="images/35.png" alt="King of Wands">
+                <p>Fire of Fire</p>
+            </div>
+        </div>
+
+        <!-- Cups -->
+        <h2 id="cups">Cups (Water)</h2>
+        <div class="card-section">
+            <div class="card" id="ace-of-cups">
+                <h3>Ace of Cups</h3>
+                <img src="images/36.png" alt="Ace of Cups">
+                <p>Water</p>
+            </div>
+            <div class="card" id="two-of-cups">
+                <h3>Two of Cups</h3>
+                <img src="images/37.png" alt="Two of Cups">
+                <p>Venus in Cancer</p>
+            </div>
+            <div class="card" id="three-of-cups">
+                <h3>Three of Cups</h3>
+                <img src="images/38.png" alt="Three of Cups">
+                <p>Mercury in Cancer</p>
+            </div>
+            <div class="card" id="four-of-cups">
+                <h3>Four of Cups</h3>
+                <img src="images/39.png" alt="Four of Cups">
+                <p>Moon in Cancer</p>
+            </div>
+            <div class="card" id="five-of-cups">
+                <h3>Five of Cups</h3>
+                <img src="images/40.png" alt="Five of Cups">
+                <p>Mars in Scorpio</p>
+            </div>
+            <div class="card" id="six-of-cups">
+                <h3>Six of Cups</h3>
+                <img src="images/41.png" alt="Six of Cups">
+                <p>Sun in Scorpio</p>
+            </div>
+            <div class="card" id="seven-of-cups">
+                <h3>Seven of Cups</h3>
+                <img src="images/42.png" alt="Seven of Cups">
+                <p>Venus in Scorpio</p>
+            </div>
+            <div class="card" id="eight-of-cups">
+                <h3>Eight of Cups</h3>
+                <img src="images/43.png" alt="Eight of Cups">
+                <p>Saturn in Pisces</p>
+            </div>
+            <div class="card" id="nine-of-cups">
+                <h3>Nine of Cups</h3>
+                <img src="images/44.png" alt="Nine of Cups">
+                <p>Jupiter in Pisces</p>
+            </div>
+            <div class="card" id="ten-of-cups">
+                <h3>Ten of Cups</h3>
+                <img src="images/45.png" alt="Ten of Cups">
+                <p>Mars in Pisces</p>
+            </div>
+            <div class="card" id="page-of-cups">
+                <h3>Page of Cups</h3>
+                <img src="images/46.png" alt="Page of Cups">
+                <p>Earth of Water</p>
+            </div>
+            <div class="card" id="knight-of-cups">
+                <h3>Knight of Cups</h3>
+                <img src="images/47.png" alt="Knight of Cups">
+                <p>Air of Water</p>
+            </div>
+            <div class="card" id="queen-of-cups">
+                <h3>Queen of Cups</h3>
+                <img src="images/48.png" alt="Queen of Cups">
+                <p>Water of Water</p>
+            </div>
+            <div class="card" id="king-of-cups">
+                <h3>King of Cups</h3>
+                <img src="images/49.png" alt="King of Cups">
+                <p>Fire of Water</p>
+            </div>
+        </div>
+
+        <!-- Swords -->
+        <h2 id="swords">Swords (Air)</h2>
+        <div class="card-section">
+            <div class="card" id="ace-of-swords">
+                <h3>Ace of Swords</h3>
+                <img src="images/50.png" alt="Ace of Swords">
+                <p>Air</p>
+            </div>
+            <div class="card" id="two-of-swords">
+                <h3>Two of Swords</h3>
+                <img src="images/51.png" alt="Two of Swords">
+                <p>Moon in Libra</p>
+            </div>
+            <div class="card" id="three-of-swords">
+                <h3>Three of Swords</h3>
+                <img src="images/52.png" alt="Three of Swords">
+                <p>Saturn in Libra</p>
+            </div>
+            <div class="card" id="four-of-swords">
+                <h3>Four of Swords</h3>
+                <img src="images/53.png" alt="Four of Swords">
+                <p>Jupiter in Libra</p>
+            </div>
+            <div class="card" id="five-of-swords">
+                <h3>Five of Swords</h3>
+                <img src="images/54.png" alt="Five of Swords">
+                <p>Venus in Aquarius</p>
+            </div>
+            <div class="card" id="six-of-swords">
+                <h3>Six of Swords</h3>
+                <img src="images/55.png" alt="Six of Swords">
+                <p>Mercury in Aquarius</p>
+            </div>
+            <div class="card" id="seven-of-swords">
+                <h3>Seven of Swords</h3>
+                <img src="images/56.png" alt="Seven of Swords">
+                <p>Moon in Aquarius</p>
+            </div>
+            <div class="card" id="eight-of-swords">
+                <h3>Eight of Swords</h3>
+                <img src="images/57.png" alt="Eight of Swords">
+                <p>Jupiter in Gemini</p>
+            </div>
+            <div class="card" id="nine-of-swords">
+                <h3>Nine of Swords</h3>
+                <img src="images/58.png" alt="Nine of Swords">
+                <p>Mars in Gemini</p>
+            </div>
+            <div class="card" id="ten-of-swords">
+                <h3>Ten of Swords</h3>
+                <img src="images/59.png" alt="Ten of Swords">
+                <p>Sun in Gemini</p>
+            </div>
+            <div class="card" id="page-of-swords">
+                <h3>Page of Swords</h3>
+                <img src="images/60.png" alt="Page of Swords">
+                <p>Earth of Air</p>
+            </div>
+            <div class="card" id="knight-of-swords">
+                <h3>Knight of Swords</h3>
+                <img src="images/61.png" alt="Knight of Swords">
+                <p>Air of Air</p>
+            </div>
+            <div class="card" id="queen-of-swords">
+                <h3>Queen of Swords</h3>
+                <img src="images/62.png" alt="Queen of Swords">
+                <p>Water of Air</p>
+            </div>
+            <div class="card" id="king-of-swords">
+                <h3>King of Swords</h3>
+                <img src="images/63.png" alt="King of Swords">
+                <p>Fire of Air</p>
+            </div>
+        </div>
+
+        <!-- Pentacles -->
+        <h2 id="pentacles">Pentacles (Earth)</h2>
+        <div class="card-section">
+            <div class="card" id="ace-of-pentacles">
+                <h3>Ace of Pentacles</h3>
+                <img src="images/64.png" alt="Ace of Pentacles">
+                <p>Earth</p>
+            </div>
+            <div class="card" id="two-of-pentacles">
+                <h3>Two of Pentacles</h3>
+                <img src="images/65.png" alt="Two of Pentacles">
+                <p>Jupiter in Capricorn</p>
+            </div>
+            <div class="card" id="three-of-pentacles">
+                <h3>Three of Pentacles</h3>
+                <img src="images/66.png" alt="Three of Pentacles">
+                <p>Mars in Capricorn</p>
+            </div>
+            <div class="card" id="four-of-pentacles">
+                <h3>Four of Pentacles</h3>
+                <img src="images/67.png" alt="Four of Pentacles">
+                <p>Sun in Capricorn</p>
+            </div>
+            <div class="card" id="five-of-pentacles">
+                <h3>Five of Pentacles</h3>
+                <img src="images/68.png" alt="Five of Pentacles">
+                <p>Mercury in Taurus</p>
+            </div>
+            <div class="card" id="six-of-pentacles">
+                <h3>Six of Pentacles</h3>
+                <img src="images/69.png" alt="Six of Pentacles">
+                <p>Moon in Taurus</p>
+            </div>
+            <div class="card" id="seven-of-pentacles">
+                <h3>Seven of Pentacles</h3>
+                <img src="images/70.png" alt="Seven of Pentacles">
+                <p>Saturn in Taurus</p>
+            </div>
+            <div class="card" id="eight-of-pentacles">
+                <h3>Eight of Pentacles</h3>
+                <img src="images/71.png" alt="Eight of Pentacles">
+                <p>Sun in Virgo</p>
+            </div>
+            <div class="card" id="nine-of-pentacles">
+                <h3>Nine of Pentacles</h3>
+                <img src="images/72.png" alt="Nine of Pentacles">
+                <p>Venus in Virgo</p>
+            </div>
+            <div class="card" id="ten-of-pentacles">
+                <h3>Ten of Pentacles</h3>
+                <img src="images/73.png" alt="Ten of Pentacles">
+                <p>Mercury in Virgo</p>
+            </div>
+            <div class="card" id="page-of-pentacles">
+                <h3>Page of Pentacles</h3>
+                <img src="images/74.png" alt="Page of Pentacles">
+                <p>Earth of Earth</p>
+            </div>
+            <div class="card" id="knight-of-pentacles">
+                <h3>Knight of Pentacles</h3>
+                <img src="images/75.png" alt="Knight of Pentacles">
+                <p>Air of Earth</p>
+            </div>
+            <div class="card" id="queen-of-pentacles">
+                <h3>Queen of Pentacles</h3>
+                <img src="images/76.png" alt="Queen of Pentacles">
+                <p>Water of Earth</p>
+            </div>
+            <div class="card" id="king-of-pentacles">
+                <h3>King of Pentacles</h3>
+                <img src="images/77.png" alt="King of Pentacles">
+                <p>Fire of Earth</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <!-- Modal structure -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
