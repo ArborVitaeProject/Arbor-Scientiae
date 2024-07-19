@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbor-Scientiae</title>
+    <title>Arbor Scientiae</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
-    <div class="parallax">
-        <div class="stars layer" data-depth="0.2"></div>
-        <div class="shooting-stars layer" data-depth="0.4"></div>
-        <div class="nebula layer" data-depth="0.1"></div>
-        <div class="celestial-object layer" data-depth="0.05"></div>
-    </div>
+    <div class="highlight"></div>
+    <div class="color-filter"></div>
     <div class="container">
-        <h1>Arbor-Scientiae</h1>
-        <div class="button-container">
-            <button onclick="location.href='Tarot/index.html'">Tarot Page</button>
-            <button onclick="location.href='page2.html'">Page 2</button>
-            <button onclick="location.href='page3.html'">Page 3</button>
+        <div class="tree-container" id="tree-container">
+            <h1 id="title" class="satisfy-regular">Arbor Scientiae</h1>
+            <div class="menu">
+                <button class="menu-item" id="tarot-button">Tarot</button>
+                <!-- Add more buttons for different menu items -->
+            </div>
         </div>
     </div>
+    <canvas id="canvas"></canvas>
     <script src="script.js"></script>
 </body>
 </html>

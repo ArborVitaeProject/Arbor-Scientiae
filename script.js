@@ -1,61 +1,80 @@
-const createStars = () => {
-    const stars = document.querySelector('.stars');
-    for (let i = 0; i < 300; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        const size = Math.random() * 3;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.top = `${Math.random() * 100}%`;
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.animationDelay = `${Math.random() * 2}s`;
-        stars.appendChild(star);
-    }
-};
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the canvas for the cosmos animation
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
 
-const createShootingStars = () => {
-    const shootingStars = document.querySelector('.shooting-stars');
-    for (let i = 0; i < 20; i++) {
-        const shootingStar = document.createElement('div');
-        shootingStar.classList.add('shooting-star');
-        shootingStar.style.top = `${Math.random() * 100}%`;
-        shootingStar.style.left = `${Math.random() * 100}%`;
-        shootingStar.style.animationDelay = `${Math.random() * 5}s`;
-        shootingStar.style.animationDuration = `${1.5 + Math.random() * 2}s`;
-        shootingStars.appendChild(shootingStar);
-    }
-};
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-const playBackgroundMusic = () => {
-    const audio = new Audio('Enigma - Principles of Lust.mp3');
-    audio.loop = true;
-    audio.autoplay = true;
-    audio.preload = 'auto';
-    audio.play().catch(error => {
-        console.error('Error playing audio:', error);
+    const stars = [];
+
+    function createStars() {
+        for (let i = 0; i < 200; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 1.5,
+                alpha: Math.random()
+            });
+        }
+    }
+
+    function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach(star => {
+            star.alpha += 0.02 * (Math.random() - 0.5);
+            if (star.alpha < 0) star.alpha = 0;
+            if (star.alpha > 1) star.alpha = 1;
+
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+            ctx.fill();
+        });
+
+        requestAnimationFrame(animateStars);
+    }
+
+    createStars();
+    animateStars();
+
+    // Animate the title and tree container
+    anime({
+        targets: '#tree-container',
+        scaleY: [0, 1],
+        opacity: [0, 1],
+        duration: 2000,
+        easing: 'easeOutElastic(1, .8)'
     });
-};
 
-const setupParallax = () => {
-    const parallax = document.querySelector('.parallax');
-    const layers = parallax.children;
+    anime({
+        targets: '#title',
+        translateY: [-50, 0],
+        opacity: [0, 1],
+        duration: 2000,
+        easing: 'easeOutBounce'
+    });
 
-    window.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth) * 2 - 1;
-        const y = (e.clientY / window.innerHeight) * 2 - 1;
+    anime({
+        targets: '.menu-item',
+        translateX: [-100, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(200, {start: 500}),
+        duration: 1000,
+        easing: 'easeOutExpo'
+    });
 
-        Array.from(layers).forEach(layer => {
-            const depth = layer.getAttribute('data-depth');
-            const movementX = x * depth * 30;
-            const movementY = y * depth * 30;
-            layer.style.transform = `translate3d(${movementX}px, ${movementY}px, 0)`;
+    document.getElementById('tarot-button').addEventListener('click', function() {
+        anime({
+            targets: '#tree-container',
+            scaleY: [1, 0],
+            opacity: [1, 0],
+            duration: 2000,
+            easing: 'easeInElastic(1, .8)',
+            complete: function() {
+                window.location.href = 'Tarot/index.html'; // Adjust the path as necessary
+            }
         });
     });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    createStars();
-    createShootingStars();
-    playBackgroundMusic();
-    setupParallax();
 });
