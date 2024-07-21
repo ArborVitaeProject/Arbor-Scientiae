@@ -66,6 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('tarot-button').addEventListener('click', function() {
+        // Create and play the sound
+        const audio = new Audio('path_to_your_sound_file.mp3');
+        audio.play();
+
+        // Animate the transition
         anime({
             targets: '#tree-container',
             scaleY: [1, 0],
