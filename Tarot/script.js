@@ -183,41 +183,35 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'easeInOutExpo'
     });
 
-    // Anime.js animations for modal
-    document.querySelectorAll('.card img').forEach(image => {
-        image.addEventListener('click', () => {
-            anime({
-                targets: '.modal',
-                opacity: [0, 1],
-                easing: 'easeInOutQuad',
-                duration: 500
-            });
+    // Create neon shapes
+    for (let i = 0; i < 10; i++) {
+        const shape = document.createElement('div');
+        shape.className = 'neon-shape';
+        document.body.appendChild(shape);
+    }
+
+    // Animate neon shapes
+    document.querySelectorAll('.neon-shape').forEach(shape => {
+        anime({
+            targets: shape,
+            translateX: () => anime.random(-200, 200),
+            translateY: () => anime.random(-200, 200),
+            scale: () => anime.random(0.5, 1.5),
+            rotate: () => anime.random(-360, 360),
+            duration: 2000,
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: true,
         });
     });
 
-    closeModal.onclick = () => {
-        anime({
-            targets: '.modal',
-            opacity: [1, 0],
-            easing: 'easeInOutQuad',
-            duration: 500,
-            complete: function() {
-                modal.style.display = 'none';
-            }
-        });
-    };
-
-    window.onclick = (event) => {
-        if (event.target == modal) {
-            anime({
-                targets: '.modal',
-                opacity: [1, 0],
-                easing: 'easeInOutQuad',
-                duration: 500,
-                complete: function() {
-                    modal.style.display = 'none';
-                }
-            });
-        }
-    };
+    // Light tracing effect on header
+    anime({
+        targets: 'header',
+        backgroundPosition: ['200% 0%', '0% 0%'],
+        easing: 'easeInOutSine',
+        duration: 2000,
+        loop: true,
+        direction: 'alternate',
+    });
 });

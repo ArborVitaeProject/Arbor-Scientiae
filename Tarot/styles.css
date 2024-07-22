@@ -355,3 +355,34 @@ nav .back-to-hub {
     bottom: 10px;
     right: 10px;
 }
+
+/* Neon shapes */
+.neon-shape {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Light tracing effect on header */
+header {
+    background: linear-gradient(270deg, #3b3b98, #2d2d8c, #1f1f7a);
+    background-size: 200% 200%;
+    animation: backgroundMove 5s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 200% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
