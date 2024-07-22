@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Dosis', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #282c34, #1c1f26);
@@ -22,7 +22,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 3em;
-    font-family: 'Cinzel', serif;
+    font-family: 'Dosis', serif;
     letter-spacing: 2px;
 }
 
@@ -39,6 +39,7 @@ nav button.menu-toggle {
     cursor: pointer;
     width: 100%;
     text-align: center;
+    font-family: 'Dosis', serif;
     font-size: 1.5em;
     transition: background 0.3s ease, transform 0.3s ease;
     display: inline-block;
