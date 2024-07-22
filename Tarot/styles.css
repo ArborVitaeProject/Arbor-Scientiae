@@ -1,23 +1,29 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #f4f4f9, #eceff1);
-    color: #333;
+    background: linear-gradient(to bottom, #282c34, #1c1f26);
+    color: #eee;
     text-align: center;
+    line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(to right, #333, #555);
+    background: linear-gradient(to right, #3b3b98, #2d2d8c, #1f1f7a);
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: static;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 3em;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
 }
 
 nav {
@@ -26,7 +32,7 @@ nav {
 }
 
 nav button.menu-toggle {
-    background: linear-gradient(to right, #444, #666);
+    background: linear-gradient(to right, #3b3b98, #282c34, #3b3b98);
     color: #fff;
     padding: 15px;
     border: none;
@@ -34,13 +40,15 @@ nav button.menu-toggle {
     width: 100%;
     text-align: center;
     font-size: 1.5em;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
     display: inline-block;
     position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav button.menu-toggle:hover {
-    background: linear-gradient(to right, #555, #777);
+    background: linear-gradient(to right, #282c34, #3b3b98, #282c34);
+    transform: translateY(-3px);
 }
 
 nav ul {
@@ -48,9 +56,10 @@ nav ul {
     padding: 0;
     margin: 0;
     display: none;
-    background-color: #333;
+    background-color: #282c34;
     position: relative;
     text-align: center;
+    border-top: 2px solid #3b3b98;
 }
 
 nav ul.open {
@@ -83,45 +92,51 @@ nav ul li a {
     padding: 15px;
     display: block;
     text-align: center;
-    border-bottom: 1px solid #444;
-    transition: background 0.3s ease;
+    border-bottom: 1px solid #3b3b98;
+    transition: background 0.3s ease, transform 0.3s ease;
+    background: #282c34;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: #555;
+    background-color: #3b3b98;
+    transform: translateY(-3px);
 }
 
 .submenu, .nested-submenu {
     display: none;
-    background-color: #444;
+    background-color: #1c1f26;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid #555;
+    border-top: 1px solid #3b3b98;
     text-align: center;
 }
 
-.submenu li,
-.nested-submenu li {
+.submenu.open, .nested-submenu.open {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.submenu li, .nested-submenu li {
     display: block;
     margin: 0;
 }
 
-.submenu li a,
-.nested-submenu li a {
+.submenu li a, .nested-submenu li a {
     padding: 10px;
     color: #fff;
     text-decoration: none;
     display: block;
     width: 100%;
-    border-bottom: 1px solid #555;
-    transition: background 0.3s ease;
+    border-bottom: 1px solid #3b3b98;
+    transition: background 0.3s ease, transform 0.3s ease;
+    background: #1c1f26;
 }
 
-.submenu li a:hover,
-.nested-submenu li a:hover {
-    background-color: #666;
+.submenu li a:hover, .nested-submenu li a:hover {
+    background-color: #3b3b98;
+    transform: translateY(-3px);
 }
 
 .submenu-toggle:after {
@@ -132,6 +147,7 @@ nav ul li a:focus {
 
 .submenu-toggle.active:after {
     content: '▲';
+    transform: rotate(180deg);
 }
 
 #cards-container {
@@ -149,10 +165,10 @@ nav ul li a:focus {
 }
 
 .card {
-    background: linear-gradient(to bottom, #fff, #f9f9f9);
-    border: 1px solid #ddd;
+    background: linear-gradient(to bottom, #3e3e42, #1c1f26);
+    border: 1px solid #3b3b98;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin: 10px;
     padding: 20px;
     text-align: center;
@@ -162,18 +178,20 @@ nav ul li a:focus {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card h3 {
     margin: 10px 0;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    color: #ffd700;
 }
 
 .card img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    border: 1px solid #3b3b98;
 }
 
 .card p {
@@ -185,7 +203,7 @@ nav ul li a:focus {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(to right, #333, #555);
+    background: linear-gradient(to right, #3b3b98, #1f1f7a);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -200,7 +218,7 @@ nav ul li a:focus {
 }
 
 #back-to-top:hover {
-    background: linear-gradient(to right, #444, #666);
+    background: linear-gradient(to right, #1f1f7a, #3b3b98);
 }
 
 .modal {
@@ -212,27 +230,28 @@ nav ul li a:focus {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     padding-top: 60px;
     animation: fadeIn 0.5s;
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #282c34;
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #3b3b98;
     width: 80%;
     max-width: 600px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .modal-content img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    border: 1px solid #3b3b98;
 }
 
 .close {
@@ -243,9 +262,8 @@ nav ul li a:focus {
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
+.close:hover, .close:focus {
+    color: #ffd700;
     text-decoration: none;
 }
 
@@ -254,7 +272,6 @@ nav ul li a:focus {
     to { opacity: 1; }
 }
 
-/* Mobile-specific styles for the navigation menu */
 @media screen and (max-width: 768px) {
     nav ul {
         display: none;
@@ -263,7 +280,7 @@ nav ul li a:focus {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #333;
+        background-color: #282c34;
         overflow-y: auto;
         z-index: 9999;
     }
@@ -273,7 +290,7 @@ nav ul li a:focus {
     }
 
     nav ul .close-menu {
-        font-size: 32px; /* Increase size of close menu 'x' */
+        font-size: 32px;
         top: 15px;
         right: 25px;
     }
@@ -311,12 +328,11 @@ nav ul li a:focus {
     }
 }
 
-/* Styles for the Back to Hub link */
 .back-to-hub {
     display: block;
     margin: 20px auto;
     padding: 10px 15px;
-    background-color: #333;
+    background-color: #3b3b98;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -326,10 +342,9 @@ nav ul li a:focus {
 }
 
 .back-to-hub:hover {
-    background-color: #555;
+    background-color: #1f1f7a;
 }
 
-/* Adjustments to fit with your existing theme */
 nav {
     position: relative;
 }
