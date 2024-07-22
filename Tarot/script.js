@@ -12,10 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Scroll to top when the button is clicked
+    // Smooth scroll to top when the button is clicked
     backToTopButton.onclick = () => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+        anime({
+            targets: 'html, body',
+            scrollTop: 0,
+            duration: 1000,
+            easing: 'easeInOutExpo'
+        });
     };
 
     // Toggle the main menu
@@ -57,9 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetElement) {
                 const scrollOffset = window.innerWidth <= 768 ? scrollOffsetMobile : scrollOffsetDesktop;
-                window.scrollTo({
-                    top: targetElement.offsetTop - scrollOffset,
-                    behavior: 'smooth'
+                anime({
+                    targets: 'html, body',
+                    scrollTop: targetElement.offsetTop - scrollOffset,
+                    duration: 1000,
+                    easing: 'easeInOutExpo'
                 });
 
                 // Close all submenus
@@ -88,19 +94,130 @@ document.addEventListener('DOMContentLoaded', () => {
         image.addEventListener('click', () => {
             modal.style.display = 'block';
             modalContent.innerHTML = image.outerHTML + `<span class="close">&times;</span>`;
-            document.querySelector('.close').onclick = () => {
-                modal.style.display = 'none';
-            };
+            anime({
+                targets: '.modal',
+                opacity: [0, 1],
+                easing: 'easeInOutQuad',
+                duration: 500
+            });
         });
     });
 
     closeModal.onclick = () => {
-        modal.style.display = 'none';
+        anime({
+            targets: '.modal',
+            opacity: [1, 0],
+            easing: 'easeInOutQuad',
+            duration: 500,
+            complete: function() {
+                modal.style.display = 'none';
+            }
+        });
     };
 
     window.onclick = (event) => {
         if (event.target == modal) {
-            modal.style.display = 'none';
+            anime({
+                targets: '.modal',
+                opacity: [1, 0],
+                easing: 'easeInOutQuad',
+                duration: 500,
+                complete: function() {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    };
+
+    // Anime.js animations for header
+    anime.timeline({loop: false})
+        .add({
+            targets: 'header h1',
+            translateY: [-100, 0],
+            opacity: [0, 1],
+            easing: 'easeOutBounce',
+            duration: 800,
+        })
+        .add({
+            targets: 'nav button.menu-toggle',
+            translateX: [-50, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 600,
+            offset: '-=400' // Starts 400ms before the previous animation ends
+        })
+        .add({
+            targets: 'nav ul li',
+            translateX: [-50, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 500,
+            delay: (el, i) => 50 * i, // Delay each item by 50ms
+            offset: '-=400' // Starts 400ms before the previous animation ends
+        });
+
+    // Anime.js animations for card sections
+    anime.timeline({loop: false})
+        .add({
+            targets: '.card-section .card',
+            scale: [0.8, 1],
+            opacity: [0, 1],
+            easing: 'easeOutElastic(1, .8)',
+            duration: 600,
+            delay: (el, i) => 100 * i, // Delay each card by 100ms
+        })
+        .add({
+            targets: '.card-section .card img',
+            rotate: '1turn',
+            easing: 'easeInOutSine',
+            duration: 800,
+            offset: '-=500' // Starts 500ms before the previous animation ends
+        });
+
+    // Anime.js animations for back-to-top button
+    anime({
+        targets: '#back-to-top',
+        scale: [0, 1],
+        rotate: '1turn',
+        duration: 800,
+        easing: 'easeInOutExpo'
+    });
+
+    // Anime.js animations for modal
+    document.querySelectorAll('.card img').forEach(image => {
+        image.addEventListener('click', () => {
+            anime({
+                targets: '.modal',
+                opacity: [0, 1],
+                easing: 'easeInOutQuad',
+                duration: 500
+            });
+        });
+    });
+
+    closeModal.onclick = () => {
+        anime({
+            targets: '.modal',
+            opacity: [1, 0],
+            easing: 'easeInOutQuad',
+            duration: 500,
+            complete: function() {
+                modal.style.display = 'none';
+            }
+        });
+    };
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            anime({
+                targets: '.modal',
+                opacity: [1, 0],
+                easing: 'easeInOutQuad',
+                duration: 500,
+                complete: function() {
+                    modal.style.display = 'none';
+                }
+            });
         }
     };
 });
