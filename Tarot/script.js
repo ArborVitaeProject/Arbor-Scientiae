@@ -218,5 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Background music
     const backgroundMusic = new Audio('background-music.mp3'); // Replace with the path to your music file
     backgroundMusic.loop = true;
-    backgroundMusic.play();
+
+    // Play background music after user interaction
+    const playMusicButton = document.createElement('button');
+    playMusicButton.innerText = 'Play Background Music';
+    playMusicButton.style.position = 'fixed';
+    playMusicButton.style.top = '10px';
+    playMusicButton.style.right = '10px';
+    playMusicButton.style.zIndex = 1000;
+    document.body.appendChild(playMusicButton);
+
+    playMusicButton.addEventListener('click', () => {
+        backgroundMusic.play();
+        playMusicButton.style.display = 'none'; // Hide button after clicking
+    });
 });
