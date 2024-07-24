@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+
 body {
     font-family: 'Dosis', sans-serif;
     margin: 0;
@@ -6,6 +8,35 @@ body {
     color: #eee;
     text-align: center;
     line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    animation: backgroundShift 10s infinite alternate, textColorFade 5s infinite alternate;
+}
+
+/* Background gradient animation */
+@keyframes backgroundShift {
+    0% {
+        background: linear-gradient(to bottom, #282c34, #1c1f26);
+    }
+    50% {
+        background: linear-gradient(to bottom, #1c1f26, #282c34);
+    }
+    100% {
+        background: linear-gradient(to bottom, #282c34, #1c1f26);
+    }
+}
+
+/* Text color animation */
+@keyframes textColorFade {
+    0%, 100% {
+        color: #eee;
+    }
+    50% {
+        color: #ff6347;
+    }
 }
 
 header {
@@ -359,23 +390,90 @@ nav .back-to-hub {
 /* Neon shapes */
 .neon-shape {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ffd700;
+    width: 50px; /* Increased size */
+    height: 50px; /* Increased size */
+    border: 3px solid #ffd700; /* Increased border thickness */
     border-radius: 50%;
-    background: rgba(255, 215, 0, 0.3);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    background: rgba(255, 215, 0, 0.4); /* Slightly more opaque */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.9); /* Increased glow */
     z-index: -1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: pulse 2s infinite, rotate 6s linear infinite; /* Added pulsing and rotation animations */
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4); /* Stronger pulse effect */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg); /* Continuous rotation */
+    }
 }
 
 /* Light tracing effect on header */
 header {
     background: linear-gradient(270deg, #3b3b98, #2d2d8c, #1f1f7a);
-    background-size: 200% 200%;
-    animation: backgroundMove 5s linear infinite;
+    background-size: 400% 400%; /* Increased background movement range */
+    animation: backgroundMove 10s linear infinite, glow 1.5s ease-in-out infinite alternate, textGlow 3s ease-in-out infinite alternate; /* Added text glow animation */
+    padding: 20px 0;
+    text-align: center;
+    position: static; /* Ensure it stays at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.9); /* Stronger header glow effect */
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.9); /* Dynamic text glow effect */
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out; /* Added fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes backgroundMove {
