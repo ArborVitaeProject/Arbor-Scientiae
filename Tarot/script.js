@@ -214,4 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         direction: 'alternate',
     });
+
+    // Background music
+    const backgroundMusic = new Audio('background-music.mp3'); // Replace with the path to your music file
+    backgroundMusic.loop = true;
+    backgroundMusic.play();
 });
