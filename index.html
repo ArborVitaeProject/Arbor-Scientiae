@@ -17,12 +17,22 @@
         <div class="tree-container" id="tree-container">
             <h1 id="title" class="satisfy-regular">Arbor Scientiae</h1>
             <div class="menu">
-                <button class="menu-item" id="tarot-button">Tarot</button>
+                <button class="menu-item" id="tarot-button" onclick="navigateToTarot()">Tarot</button>
+                <button class="menu-item" id="planets-plants-button" onclick="navigateToPlanetsAndPlants()">Planets and Plants</button>
                 <!-- Add more buttons for different menu items -->
             </div>
         </div>
     </div>
     <canvas id="canvas"></canvas>
     <script src="script.js"></script>
+    <script>
+        function navigateToTarot() {
+            window.location.href = 'Tarot/index.html';
+        }
+
+        function navigateToPlanetsAndPlants() {
+            window.location.href = 'Planets and Plants/index.html';
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,235 @@
+:root {
+    --border-thickness: 4px; /* Default border thickness, can be adjusted */
+}
+
+body {
+    font-family: "Kanit", cursive;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000428, #004e92);  /* Deep space gradient background */
+    color: #fff;  /* White text for better contrast */
+    overflow-x: hidden;  /* Prevent horizontal scroll */
+}
+
+#playMusic {
+    padding: 0.5em 1em;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 1em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header {
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: var(--border-thickness) solid black; /* Dark border */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Ensure the video is behind the text */
+    overflow: hidden;
+}
+
+header video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    padding: 2em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    background: rgba(0, 23, 40, 0);  /* 10% transparency */
+    font-size: 2.5em;
+    padding: 0.5em 0;  /* Control vertical thickness of text background */
+    animation: fadeIn 1s ease-in-out;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 0.5em 0 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+nav {
+    position: relative;  /* Ensure it stays positioned correctly */
+    z-index: 999;
+    border-bottom: var(--border-thickness) solid black; /* Dark border */
+}
+
+nav video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;  /* Ensure the video stays behind the content */
+    opacity: 0.9;  /* Slight transparency for better readability */
+}
+
+nav ul {
+    list-style: none;
+    padding: 1em 0;  /* Add padding to align with the previous design */
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    animation: fadeIn 2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li {
+    margin: 0.5em 0;
+}
+
+nav ul li a {
+    color: white;
+    background: #000428;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #eb85f2;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 2.5s ease-in-out;
+    background: rgba(0, 0, 0, 0.8);  /* Ensure content is readable with the gradient background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.planet-section {
+    margin-bottom: 2em;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.1);  /* Lightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden; /* Ensures that the video does not overflow */
+}
+
+.planet-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #1abc9c;
+}
+
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.planet-section .content {
+    position: relative;
+    font-size: large;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    padding: 1em;
+    border-radius: 10px;
+    color: #fff; /* Ensure text is white for contrast */
+}
+
+.planet-section .content h2,
+.planet-section .content p {
+    margin: 0 0 1em 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    position: static;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Background animations */
+.stars, .twinkling, .clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.stars {
+    background: url('images/stars.png') repeat;
+    animation: moveStars 150s linear infinite;
+}
+
+.twinkling {
+    background: url('images/twinkling.png') repeat;
+    animation: moveTwinkling 100s linear infinite;
+}
+
+.clouds {
+    background: url('images/clouds.png') repeat;
+    animation: moveClouds 200s linear infinite;
+}
+
+@keyframes moveStars {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 10000px;}
+}
+
+@keyframes moveTwinkling {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 10000px;}
+}
+
+@keyframes moveClouds {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 10000px;}
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
